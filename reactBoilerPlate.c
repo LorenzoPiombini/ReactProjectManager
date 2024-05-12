@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include "os_detection.h"
 
