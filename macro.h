@@ -23,7 +23,6 @@ void headerWelcome(){
 	printf("\t=========================================================================================\n");
 }
 
-
 void buildTheScreens(char* path){
 	int screens = 0;
 	char* fileName = NULL;
@@ -77,7 +76,6 @@ void generateScreens(){
 	}
 	
 	buildTheScreens(path);
-
 	free(path);
 }
 

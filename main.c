@@ -32,7 +32,7 @@ int main(){
         int option = 0;
 	
 	printf("\nEnter an option(1,2,3,4): ");
-        while(option < 1 || option > 4){	
+	while(option < 1 || option > 4){	
 	scanf("%d",&option);
         getchar();
 	}
