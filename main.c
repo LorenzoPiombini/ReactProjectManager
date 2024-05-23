@@ -1,14 +1,17 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #include "os_detection.h"
 #include "jsfiletmplt.h"
+#include "input_checks.h"
+#include "macro.h"
+#include "express_gen.h"
+#include "commands.h"
 
 int isNode(){
 	if( system("node -v > /dev/null 2>&1") == 0){
-           	printf("\033[0;32m");
-		printf("Node.js is installed.\n");
-		printf("\033[0m");
-		fflush(stdout);
+		GREEN_TEXT("\nNode.js is installed.\n");
 		return 1;
 	}else{
 		printf("Node.js is not installed.\n");
@@ -19,20 +22,30 @@ int isNode(){
 
 
 int main(){
-
-	char buffer[250];
-        char fileName[200];
-
+        
+	headerWelcome();
 	if(!isNode()){
         	printf("install Node before start working with React.");
         }
+        
+	
+        int option = 0;
+	
+	printf("\nEnter an option(1,2,3,4): ");
+        while(option < 1 || option > 4){	
+	scanf("%d",&option);
+        getchar();
+	}
 
-	checkOS();//from os_detection.h
 
-	printf("\nenter name of the file: ");
-	scanf("%s", fileName);
-
-	screen(fileName,buffer); // from jsfiletmplt.h
-
+	switch(option){
+	case 1: basicProject();
+		break;
+	case 4: generateScreens();
+		break;
+	default:
+	break;
+	}
+        
 	return 0;
 }

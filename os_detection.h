@@ -1,7 +1,6 @@
 #ifndef OS_DETECTION_H
 #define OS_DETECTION_H
 
-#include <stdio.h>
  
 /*window OS*/
 #ifdef  _WIN32 
