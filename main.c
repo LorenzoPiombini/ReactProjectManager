@@ -31,8 +31,8 @@ int main(){
 	
         int option = 0;
 	
-	printf("\nEnter an option(1,2,3): ");
-	while(option < 1 || option > 3){	
+	printf("\nEnter an option(1,2,3,4): ");
+	while(option < 1 || option > 4){	
 	scanf("%d",&option);
         getchar();
 	}
@@ -40,6 +40,8 @@ int main(){
 
 	switch(option){
 	case 1: basicProject();
+		break;
+	case 4: generateScreens();
 		break;
 	default:
 	break;

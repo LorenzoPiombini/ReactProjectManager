@@ -6,6 +6,7 @@
 #include <string.h>
 
 
+#define NO_OUTPUT " > /dev/null 2>&1"
 #define MK_DIR "mkdir "
 #define RM_DIR "rm -r "
 #define CD "cd "

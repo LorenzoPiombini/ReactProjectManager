@@ -19,23 +19,42 @@ void headerWelcome(){
         printf("\t=    - need Ngrok intalled and a Mongodb profile and db 				=\n");
         printf("\t= 3) project with a sign in and out option already wired in with Express server         =\n");
 	printf("\t=    - need Ngrok intalled and a Mongodb profile and db                                 =\n");
+	printf("\t= 4) simple screen generator, you provide only the  path and the title.                 =\n");
 	printf("\t=========================================================================================\n");
 }
 
 
 
+
+void generateScreens(){
+ 	char *path = NULL;
+
+        printf("\nEnter path  of the project: ");
+        path = check_real_length_from_input();  
+        
+        while(path == NULL || !isPathValid(path)){
+        printf("\nYou must enter a valid path: ");
+        path = check_real_length_from_input();
+	}
+       
+        
+}
+
 void basicProject(){
 	int screens;
+        char *projectName = NULL;
+        char *path = NULL;
         printf("\nEnter name of the project: ");
-        char *projectName = check_real_length_from_input();
+        projectName = check_real_length_from_input();
 
         printf("\nEnter path  of the project: (press enter to use the current directory) ");
-        char *path = check_real_length_from_input();	
+        path = check_real_length_from_input();	
         
+
+
         //if the user do not provide a path the software set the path from the pwd
 	// LNX macro from os_detection.h
-	if(path == NULL && LNX ){
-               //printf("inside the if in case of no path");
+	if(path == NULL && (LNX || APL)){
 		path = getPwd();
 	}
          
